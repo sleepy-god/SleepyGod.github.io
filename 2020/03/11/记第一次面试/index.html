@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>腾讯Web前端开发暑期实习生 | 幻尘の屋</title><meta name="description" content="腾讯Web前端开发暑期实习生"><meta name="author" content="幻尘"><meta name="copyright" content="幻尘"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="http://ta.qq.com"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="baidu-site-verification" content="wllVTIXScZteKqkv"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="腾讯Web前端开发暑期实习生"><meta name="twitter:description" content="腾讯Web前端开发暑期实习生"><meta name="twitter:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2072221314,1084284933&amp;fm=26&amp;gp=0.jpg"><meta property="og:type" content="article"><meta property="og:title" content="腾讯Web前端开发暑期实习生"><meta property="og:url" content="http://www.sleepygod.xyz/2020/03/11/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/"><meta property="og:site_name" content="幻尘の屋"><meta property="og:description" content="腾讯Web前端开发暑期实习生"><meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2072221314,1084284933&amp;fm=26&amp;gp=0.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://www.sleepygod.xyz/2020/03/11/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/"><link rel="prev" title="腾讯前端实习生（视频面试）" href="http://www.sleepygod.xyz/2020/03/14/%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%88%E8%A7%86%E9%A2%91%E9%9D%A2%E8%AF%95%EF%BC%89/"><link rel="next" title="初来乍到，请多指教" href="http://www.sleepygod.xyz/2020/03/10/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%EF%BC%8C%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99/"><script src="http://tajs.qq.com/stats?sId=66540395" charset="UTF-8"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"http://www.sleepygod.xyz/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: 幻尘","link":"链接: http://www.sleepygod.xyz/2020/03/11/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/","source":"来源: 幻尘の屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"梦想,未来,游戏,前端,二次元,正直,年轻,活力,学渣,志向,坚持,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: true,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">幻尘の屋</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">5</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><div class="sidebar-toc__content"></div></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"></div></div></div><main id="content-outer"><div id="top-container" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2072221314,1084284933&amp;fm=26&amp;gp=0.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">腾讯Web前端开发暑期实习生</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 发表于 2020-03-11<span class="post-meta__separator">|</span><i class="fa fa-history fa-fw" aria-hidden="true"></i> 更新于 2020-04-11</time><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><span><i class="fa fa-eye post-meta__icon fa-fw" aria-hidden="true"> </i>阅读量:</span><span id="busuanzi_value_page_pv"></span></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><html><head></head><body><p><strong>第一次面试</strong></p>
+<p>3号下午六点突然接到了一个电话，显示微应用的号码，电话里，腾讯的面试官告诉我晚上7点进行电话面试</p>
+<p>心情瞬间开始变得兴奋和紧张</p>
+<p>紧张的是没有什么准备很突然，兴奋是因为这是第一次专业的面试</p>
+<p>虽然总体表现不是很好，但是通过这次面试也给自己找到了很多不足的地方，面试之后总结了题目，发出来共勉一下</p>
+<blockquote>
+<p><strong>1、面试开始是简单的自我介绍</strong></p>
+<p>我说了自己的学习历程，说了些参与过的小项目，然后就进入了正式的面试环节</p>
+</blockquote>
+<hr>
+<p><strong>JS</strong></p>
+<hr>
+<blockquote>
+<p><strong>2、JavaScript的数据类型有哪些？</strong></p>
+<p>基本数据类型：String 、 Number 、 Boolean 、 null 、 undefined</p>
+<p>引用数据类型：Function 、 Object 、 Array</p>
+<hr>
+<p><strong>3、undefined与null的区别（想起来一大部分有一些是面试后补充的）</strong></p>
+<p>undefined表示”缺失值”,null表示没有对象，</p>
+<p>undefined与null值相同但是类型不相同</p>
+<p>声明变量后不赋值就会默认为undefined，函数无返回值时也会默认undefined，调用函数时没有提供相对应的参数，参数也会默认undefined</p>
+<p>null可以用作函数的参数，表示该函数的参数不是对象，也可以作为原型链的终点</p>
+<hr>
+<p><strong>4、在日常应用中，undefined和null的常用方式</strong></p>
+<p>undefined用于清空变量，null用于清空对象</p>
+<hr>
+<p><strong>5、JSON的格式是什么</strong></p>
+<p>{‘’:’’,’’:’’}</p>
+<hr>
+<p><strong>6、JS中JSON相关的内置对象</strong></p>
+<p>Json.stringify() 将js对象或数组转换为字符串</p>
+<p>JSON.parse() 将文本解析为js对象</p>
+</blockquote>
+<hr>
+<blockquote>
+<hr>
+<p>自我感觉上面答的还可以，主要也是由于那几天在重新温习js和学习es6，脑子里面全是js相关的东西，然而从这后面的就开始了I Don’t Know的旅程</p>
+</blockquote>
+<hr>
+<p><strong>H5</strong></p>
+<hr>
+<blockquote>
+<p><strong>7、H5有哪些新特性(这个还是知道的)</strong></p>
+<p>audio、video、canvas、article、footer、section、nav、header、表单控件email、date、time、url、search、地理定位、缓存application cach</p>
+<hr>
+<p><strong>8、简单说一下H5的语义化（说实话一瞬间就懵了，这之前真没听过语义化）</strong></p>
+<p>后续搜索的答案：</p>
+<p>将标签优化使页面结构更加清晰，增加可读性，有利于SEO优化；根据文档上下文选择合适的语义化标签</p><nav><header><section><footer>等；尽量减少使用无语义化的标签如<div><span>；添加title和kewords；不使用带有样式的标签，用css设置样式<p></p>
+</span></div></footer></section></header></nav></blockquote>
+<hr>
+<p><strong>浏览器相关</strong></p>
+<blockquote>
+<p><strong>9、从用户输入url到页面显示都发生了什么</strong></p>
+<p>(1)客户端通过DNS解析获得服务器的ip</p>
+<p>(2)三次握手建立tcp链接</p>
+<p>(3)浏览器向服务器发送HTTP请求</p>
+<p>(4)服务器回应HTTP响应</p>
+<p>(5)浏览器接收HTTP响应的数据</p>
+<p>(6)浏览器解析html文件，根据标签生成DOM树</p>
+<p>(7)浏览器解析css，生成CSSOM树</p>
+<p>(8)浏览器将DOM树和CSSOM树合并，构建渲染树</p>
+<p>(9)浏览器进行布局、绘制、重绘和回流</p>
+<p>(10)浏览器与服务器四次挥手断开链接</p>
+<hr>
+<p><strong>10、具体描述一下浏览器的重绘与回流</strong></p>
+<p>重绘：根据元素的新属性重新绘制，使元素呈现新的外观</p>
+<p>回流：当render tree中的一部分（或全部）因为元素的规模尺寸，布局，隐藏等改变而需要重新构建称为回流</p>
+<p>区别：回流一定会引起重绘，而重绘不一定引起回流</p>
+<hr>
+<p><strong>11、浏览器的缓存类型</strong></p>
+<p>协商缓存：每次读取缓存时，先到服务器去验证是否有改变，如果有就获取，没有就从缓存中读取，响应code为304</p>
+<p>强制缓存：只要缓存没过有效期，就强制读取缓存，响应code为200，该类缓存必定要持久化到disk</p>
+<hr>
+<p><strong>12、浏览器的常用缓存机制</strong></p>
+<p>http缓存：基于http协议的浏览器文件缓存机制，当重复请求某一个文件时，浏览器可以根据协议的头文件判断是从服务端请求文件还是从本地读取文件</p>
+<p>cookies：用于标识用户的一小块数据信息，可在浏览器与服务器之间传递</p>
+<p>localStorage：要访问同一个localStorage页面必须同源，没有时间限制的数据存储，主要可用于存储ajax请求返回的数据</p>
+<p>sessionStorage：只能被最初存储对象的页面所访问，针对一个session的数据存储，浏览器关闭后就会删除</p>
+</blockquote>
+<hr>
+<p><strong>数据结构</strong></p>
+<blockquote>
+<p>！！！不问我真的没意识到这些知识已经忘光了，欲哭无泪啊！！！</p>
+<hr>
+<p><strong>13、二叉树的遍历方式有哪些？</strong></p>
+<p>前序遍历，中序遍历，后序遍历和层序遍历</p>
+<hr>
+<p><strong>14、二叉树如何删除一个节点？</strong></p>
+<p>先确定树的类型，然后找到节点的位置，如果节点是最底层的子节点，就直接置空；如果有一个左子节点或右子节点，则将子节点拼接在要删除的节点的父节点上；如果有左子节点和右子节点，则依序寻找未删除的下一个遍历位置，在不改变原有顺序的情况向将节点进行置换，改变树的结构</p>
+</blockquote>
+<hr>
+<p><strong>操作系统</strong></p>
+<blockquote>
+<p><strong>15、简单说一下线程与进程</strong></p>
+<p>进程是并发执行的程序在执行过程中分配和管理资源的基本单位，是竞争计算机系统资源的基本单位</p>
+<p>线程是进程的一个执行单元，是进程内可调度的一个实体</p>
+<p>一个程序至少有一个进程，一个进程至少有一个线程</p>
+<p>区别:</p>
+<p>  _地址空间_：同一进程的线程共享本进程的地址空间，而进程之间则是独立的地址空间。</p>
+<p>  _资源拥有_：同一进程内的线程共享本进程的资源如内存、I/O、cpu等，但是进程之间的资源是独立的。</p>
+<p>  _开销_：线程执行开销小，但是不利于资源的管理和保护。线程适合在SMP机器（双CPU系统）上运行；进程执行开销大，但是能够很好的进行资源管理和保护。进程可以跨机器前移。</p>
+</blockquote>
+<hr>
+<p><strong>计算机网络</strong></p>
+<blockquote>
+<p><strong>16、HTTP的状态码及其描述</strong></p>
+<p>2**处理成功</p>
+<p>3**重定向</p>
+<p>4**客户端错误</p>
+<p>5**服务器错误</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>请求成功，服务器成功处理了请求</td>
+</tr>
+<tr>
+<td>201</td>
+<td>请求成功，并且服务器新创建了资源</td>
+</tr>
+<tr>
+<td>202</td>
+<td>请求成功但服务器尚未处理</td>
+</tr>
+<tr>
+<td>301</td>
+<td>永久重定向，页面永久跳转到新的url</td>
+</tr>
+<tr>
+<td>302</td>
+<td>临时重定向，服务器目前从不同位置的网页响应请求，但请求仍继续使用原有位置来进行以后的请求</td>
+</tr>
+<tr>
+<td>403</td>
+<td>服务器已接收请求，但拒绝处理</td>
+</tr>
+<tr>
+<td>404</td>
+<td>页面url未找到</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器错误</td>
+</tr>
+<tr>
+<td>502</td>
+<td>网关错误</td>
+</tr>
+<tr>
+<td>503</td>
+<td>由于超载或正在维护，服务器暂时不可用</td>
+</tr>
+</tbody></table>
+</blockquote>
+<hr>
+<p>以上就是这次面试的全部题目了，总结一下这次面试：</p>
+<p>全程很紧张，没有什么准备太突然了，暴露了很多缺点，大多数内容只是会用，却没记住，对基础内容掌握还不透彻，对算法，操作系统等大多数之前掌握的知识现在都忘了，也体现了记笔记和记博客的重要性，虽然这次面试很有挫败感，但是也给了我接下来学习的方向和动力，相信努力总是会有回报的！</p>
+</body></html></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">幻尘</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.sleepygod.xyz/2020/03/11/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/">http://www.sleepygod.xyz/2020/03/11/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.sleepygod.xyz">幻尘の屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2072221314,1084284933&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付宝"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/14/%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%88%E8%A7%86%E9%A2%91%E9%9D%A2%E8%AF%95%EF%BC%89/"><img class="prev_cover lazyload" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2072221314,1084284933&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>腾讯前端实习生（视频面试）</span></div></a></div><div class="next-post pull_right"><a href="/2020/03/10/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%EF%BC%8C%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/default.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>初来乍到，请多指教</span></div></a></div></nav></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 幻尘</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="icp"><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener"><img class="icp-icon" src="/img/icp.png"><span>蒙ICP备20000691号-1</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">简</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/canvas-nest.js"></script><script src="https://cdn.jsdelivr.net/npm/activate-power-mode/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true; 
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/ClickShowText.js"></script></body></html>
