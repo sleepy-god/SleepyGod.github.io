@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.songit.cn/sitemap.xml
-Sitemap: http://www.songit.cn/baidusitemap.xml
+Sitemap: http://www.sleepygod.xyz/sitemap.xml
+Sitemap: http://www.sleepygod.xyz/baidusitemap.xml
