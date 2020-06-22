@@ -1,328 +1,123 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>幻尘の屋 - 改变，从这里开始</title><meta name="description" content="追求更好的未来，永远阳光"><meta name="author" content="幻尘"><meta name="copyright" content="幻尘"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="http://ta.qq.com"><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="//busuanzi.ibruce.info"><meta name="baidu-site-verification" content="wllVTIXScZteKqkv"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="幻尘の屋"><meta name="twitter:description" content="追求更好的未来，永远阳光"><meta name="twitter:image" content="http://www.sleepygod.xyz/img/avatar.png"><meta property="og:type" content="website"><meta property="og:title" content="幻尘の屋"><meta property="og:url" content="http://www.sleepygod.xyz/"><meta property="og:site_name" content="幻尘の屋"><meta property="og:description" content="追求更好的未来，永远阳光"><meta property="og:image" content="http://www.sleepygod.xyz/img/avatar.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-<!DOCTYPE html>
-<html lang="zh-CN" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>幻尘の屋 - 改变，从这里开始</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="追求更好的未来，永远阳光,"> 
-    <meta name="author" content="幻尘"> 
-    <link rel="alternative" href="atom.xml" title="幻尘の屋" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-    
-<link rel="stylesheet" href="/css/diaspora.css">
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
 
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8691406134231910",
-              enable_page_level_ads: true
-         });
-    </script>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body class="loading">
-    <span id="config-title" style="display:none">幻尘の屋</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="/img/logo.png" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
-        
-            <a href="mailto:xxxx@gmail.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2020 幻尘.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-		<span> | </span><a rel="nofollow" href="http://beian.miit.gov.cn" target="_blank">蒙ICP备20000691号-1</a>
-		
-    </p>
-</div>
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
 
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
-        </div>
-    </div>
-    
-    <div id="post0">
-        <p>六月 04, 2020</p>
-        <h2><a href="/2020/06/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20----%20%E8%99%9A%E6%8B%9FDOM/" title="Vue学习笔记 ---- 虚拟DOM" class="posttitle">Vue学习笔记 ---- 虚拟DOM</a></h2>
-        <p class="summary">Vue学习笔记 —- 虚拟DOM什么是虚拟DOM随着时代的发展，页面上的功能越来越多，程序中需要维护的状态越来越多...</p>
-    </div>
-    
-</div>
-
-    <div id="primary">
-        
-<div class="post">
-    <a href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/" title="BFC小结">
-        <img src="https://s1.ax1x.com/2020/06/03/tNxUIA.th.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>六月 03, 2020</p>
-        <h3><a href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/" title="BFC小结" class="posttitle">BFC小结</a></h3>
-        <p>BFC小结之前并没有系统地了解过什么是BFC以及它有什么作用，学习之后才发现以前遇到的很多问题都是可以使用BFC解决的
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://www.sleepygod.xyz/"><script src="http://tajs.qq.com/stats?sId=66540395" charset="UTF-8"></script><link rel="preload" href="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"http://www.sleepygod.xyz/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: 幻尘","link":"链接: http://www.sleepygod.xyz/","source":"来源: 幻尘の屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"梦想,未来,游戏,前端,二次元,正直,年轻,活力,学渣,志向,坚持,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: true,
+  isPost: false
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">幻尘の屋</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">13</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> Movie</span></a></li></ul></div></div></div></div><div id="body-wrap"><nav class="full_page" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg)"><div id="site-info"><div id="site-title"><span class="blogtitle">幻尘の屋</span></div><div id="site-sub-title"><span class="subtitle"></span></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/sleepy-god" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:ryz1402168918@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div></nav><main id="content-outer"><div class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20----%20%E8%99%9A%E6%8B%9FDOM/" title="Vue学习笔记 ---- 虚拟DOM"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/04/tw0mOe.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue学习笔记 ---- 虚拟DOM"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20----%20%E8%99%9A%E6%8B%9FDOM/" title="Vue学习笔记 ---- 虚拟DOM">Vue学习笔记 ---- 虚拟DOM</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-04</time><div class="content">Vue学习笔记 —- 虚拟DOM什么是虚拟DOM随着时代的发展，页面上的功能越来越多，程序中需要维护的状态越来越多，DOM操作也越来越频繁
+我们发现像之前那样使用jQuery或原生js来开发页面，那么操作DOM的代码占据大多数，程序中的状态也难以进行管理，这被称为命令式操作DOM，虽然简单实用，但是 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/" title="BFC小结"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/03/tNxUIA.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BFC小结"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/" title="BFC小结">BFC小结</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-03</time><div class="content">BFC小结之前并没有系统地了解过什么是BFC以及它有什么作用，学习之后才发现以前遇到的很多问题都是可以使用BFC解决的
 什么是BFC
-W3C对BFC的定义...</p>
-    </div>
-</div>
+W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-caption ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="javaScript的深浅拷贝"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/02/tYnhqI.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaScript的深浅拷贝"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="javaScript的深浅拷贝">javaScript的深浅拷贝</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-02</time><div class="content">我所理解的JavaScript的深浅拷贝这并不是我第一次解除这个话题，但是这是我第一次深入地对javaScript的深浅拷贝机制进行学习
+数据类型我们都知道javaScript拥有很多数据类型我们将他们分为两种：
 
+基本数据类型
+引用数据类型
 
-<div class="post">
-    <a href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="javaScript的深浅拷贝">
-        <img src="https://s1.ax1x.com/2020/06/02/tYnhqI.th.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>六月 02, 2020</p>
-        <h3><a href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="javaScript的深浅拷贝" class="posttitle">javaScript的深浅拷贝</a></h3>
-        <p>我所理解的JavaScript的深浅拷贝这并不是我第一次解除这个话题，但是这是我第一次深入地对javaScript的深浅拷贝机制进行学习
-数据类型我们都知...</p>
-    </div>
-</div>
+基本数据类型包括： String, Number, B ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/01/t8iZon.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="防抖与节流"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流">防抖与节流</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-01</time><div class="content">防抖与节流第一次接触防抖与节流的概念是在一次面试中，但是当时并没有觉得防抖与节流很重要，知道后来学习vue做项目的时候才明白，防抖与节流能够有效地节省浏览器资源，因此更加深入地学习了防抖与节流的知识
+函数防抖
+当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/" title="我所理解的Event-loop"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/05/31/tlNg6e.th.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我所理解的Event-loop"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/" title="我所理解的Event-loop">我所理解的Event-loop</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-31</time><div class="content">javaScript的执行机制（Event-Loop）理解js的执行机制是一件至关重要的事情
+javascript123456var a = 10;var b = 20;console.log(a);console.log(b);//输出： 10 20
 
-
-<div class="post">
-    <a href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流">
-        <img src="https://s1.ax1x.com/2020/06/01/t8iZon.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>六月 01, 2020</p>
-        <h3><a href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流" class="posttitle">防抖与节流</a></h3>
-        <p>防抖与节流第一次接触防抖与节流的概念是在一次面试中，但是当时并没有觉得防抖与节流很重要，知道后来学习vue做项目的时候才明白，防抖与节流能够有效地节省浏览...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/" title="我所理解的Event-loop">
-        <img src="https://s1.ax1x.com/2020/05/31/tlNg6e.th.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>五月 31, 2020</p>
-        <h3><a href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/" title="我所理解的Event-loop" class="posttitle">我所理解的Event-loop</a></h3>
-        <p>javaScript的执行机制（Event-Loop）理解js的执行机制是一件至关重要的事情
-javascript123456var a = 10;var...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2020/05/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" title="浏览器的重绘和回流">
-        <img src="https://s1.ax1x.com/2020/06/01/t8F49x.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>五月 30, 2020</p>
-        <h3><a href="/2020/05/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" title="浏览器的重绘和回流" class="posttitle">浏览器的重绘和回流</a></h3>
-        <p>
+当我们接触到这样的代码，我们心情舒畅，因为一 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/05/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" title="浏览器的重绘和回流"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/01/t8F49x.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浏览器的重绘和回流"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/05/30/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81/" title="浏览器的重绘和回流">浏览器的重绘和回流</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-30</time><div class="content">
 浏览器的重绘与回流这是我在之前面试中遇到的一个问题，今天回想起来正好做一个总结
-浏览器在将页面展示给我们之前都做了什么（渲染机制）这其实也是我遇到的一道...</p>
-    </div>
-</div>
+浏览器在将页面展示给我们之前都做了什么（渲染机制）这其实也是我遇到的一道面试题，与重绘和回流息息相关
 
-
-<div class="post">
-    <a href="/2020/05/29/JavaScript%20--%20this%E7%9A%84%E4%BD%BF%E7%94%A8/" title="JavaScript -- this的使用">
-        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3095136509,3220724763&fm=26&gp=0.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>五月 29, 2020</p>
-        <h3><a href="/2020/05/29/JavaScript%20--%20this%E7%9A%84%E4%BD%BF%E7%94%A8/" title="JavaScript -- this的使用" class="posttitle">JavaScript -- this的使用</a></h3>
-        <p>JavaScript – this的使用
+用户输入网址
+浏览器通过DNS获取网站的IP地址
+浏览器尝试与服务器建立连接
+服务器发送永久重定向
+浏览器跟踪重定 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/05/29/JavaScript%20--%20this%E7%9A%84%E4%BD%BF%E7%94%A8/" title="JavaScript -- this的使用"><img class="post_bg lazyload" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3095136509,3220724763&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript -- this的使用"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/05/29/JavaScript%20--%20this%E7%9A%84%E4%BD%BF%E7%94%A8/" title="JavaScript -- this的使用">JavaScript -- this的使用</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-29</time><div class="content">JavaScript – this的使用
 通过阅读MDN和各类博客复习了一下javascript中this的使用方法
-什么是this在传统的面向对象语言中...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2020/05/28/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20--%20Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="Vue学习笔记 -- Vue的响应式原理">
-        <img src="https://s1.ax1x.com/2020/06/04/tw0mOe.th.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>五月 28, 2020</p>
-        <h3><a href="/2020/05/28/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20--%20Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="Vue学习笔记 -- Vue的响应式原理" class="posttitle">Vue学习笔记 -- Vue的响应式原理</a></h3>
-        <p>
+什么是this在传统的面向对象语言中this关键字指代了当前对象本身，或者是当前对象的一个实例，通过使用this可以对其中方法与属性进行调用
+在javascript中this的指向是 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/05/28/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20--%20Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="Vue学习笔记 -- Vue的响应式原理"><img class="post_bg lazyload" data-src="https://s1.ax1x.com/2020/06/04/tw0mOe.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue学习笔记 -- Vue的响应式原理"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/05/28/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20--%20Vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="Vue学习笔记 -- Vue的响应式原理">Vue学习笔记 -- Vue的响应式原理</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-28</time><div class="content">
 Vue学习笔记 – Vue的响应式原理今天通过王红元老师的教学视频和一些博主的技术分享，学习了Vue的响应式原理，话不多说直接进入正题
 
-这是Vue官网...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2020/05/22/HTTP%E5%8D%8F%E8%AE%AE%E5%92%8CHTTP1.01.12.0%E7%9A%84%E5%8C%BA%E5%88%AB/" title="HTTP协议和HTTP1.01.12.0的区别">
-        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=853068356,698173734&fm=26&gp=0.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>五月 22, 2020</p>
-        <h3><a href="/2020/05/22/HTTP%E5%8D%8F%E8%AE%AE%E5%92%8CHTTP1.01.12.0%E7%9A%84%E5%8C%BA%E5%88%AB/" title="HTTP协议和HTTP1.01.12.0的区别" class="posttitle">HTTP协议和HTTP1.01.12.0的区别</a></h3>
-        <p>
+这是Vue官网中提供的响应式原理示意图，总结起来我们最常见到的响应式原理的答案就是： 
+使用Object.defineProperty将所有属性使用setter ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover left_radius"><a href="/2020/05/22/HTTP%E5%8D%8F%E8%AE%AE%E5%92%8CHTTP1.01.12.0%E7%9A%84%E5%8C%BA%E5%88%AB/" title="HTTP协议和HTTP1.01.12.0的区别"><img class="post_bg lazyload" data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=853068356,698173734&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTTP协议和HTTP1.01.12.0的区别"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/05/22/HTTP%E5%8D%8F%E8%AE%AE%E5%92%8CHTTP1.01.12.0%E7%9A%84%E5%8C%BA%E5%88%AB/" title="HTTP协议和HTTP1.01.12.0的区别">HTTP协议和HTTP1.01.12.0的区别</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-05-22</time><div class="content">
 HTTP协议和HTTP1.0/1.1/2.0的区别一、什么是HTTP协议
-HTTP协议，全称超文本传输协议，属于网络结构OSI参考模型的“最上层”应用层...</p>
-    </div>
-</div>
+HTTP协议，全称超文本传输协议，属于网络结构OSI参考模型的“最上层”应用层，由请求与响应构成，是无状态的协议。
+
+HTTP占用默认端口号为80，可承载在TLS和SSL之上，通过加密、认证的方式实现数据传输，即HTTPS协 ...</div></div></div><div class="recent-post-item article-container"><div class="post_cover right_radius"><a href="/2020/03/21/%E7%BE%8E%E5%9B%A2%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" title="美团前端实习面试"><img class="post_bg lazyload" data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1880610474,661989955&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美团前端实习面试"></a></div><div class="recent-post-info">  <a class="article-title" href="/2020/03/21/%E7%BE%8E%E5%9B%A2%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" title="美团前端实习面试">美团前端实习面试</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-03-21</time><div class="content">面试开始比较戏剧性，我在调整设备时发现聊天室显示对方已经进入房间，我就点了接受面试邀请，面试官小哥哥也还没准备好，商量了一下，面试就这样开始了
+面试官问我我先手写两个代码可以吗，当然同意了！
 
 
-<div class="post">
-    <a href="/2020/03/21/%E7%BE%8E%E5%9B%A2%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" title="美团前端实习面试">
-        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1880610474,661989955&fm=26&gp=0.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 21, 2020</p>
-        <h3><a href="/2020/03/21/%E7%BE%8E%E5%9B%A2%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" title="美团前端实习面试" class="posttitle">美团前端实习面试</a></h3>
-        <p>面试开始比较戏剧性，我在调整设备时发现聊天室显示对方已经进入房间，我就点了接受面试邀请，面试官小哥哥也还没准备好，商量了一下，面试就这样开始了
-面试官问我...</p>
-    </div>
-</div>
-
-
-    </div>
-    
-    <div id="pager"><a href="/page/2/" class="more">加载更多</a></div>
-    
-</div>
-<div id="preview"></div>
-
-	<center><a rel="nofollow" style="color: #666;" href="http://beian.miit.gov.cn" target="_blank">蒙ICP备20000691号-1</a></center>
-
-
-
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-</html>
+数据结构二叉树的中序遍历
+javascript123456789101112class Node{    ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-fw fa-chevron-right" aria-hidden="true"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"><div class="author-info__name">幻尘</div><div class="author-info__description">追求更好的未来，永远阳光</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><a class="bookmark button--primary button--animated" id="bookmark-it" href="javascript:;" title="加入书签" target="_self"><i class="fa fa-bookmark" aria-hidden="true"></i><span>加入书签</span></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/sleepy-god" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a><a class="social-icon" href="mailto:ryz1402168918@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i><span>公告</span></div><div class="announcement_content">感谢访问本站，若喜欢请收藏 ^_^</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fa fa-history" aria-hidden="true"></i><span>最新文章</span></div><div class="aside-recent-item"> <div class="aside-recent-post"><a href="/2020/06/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20----%20%E8%99%9A%E6%8B%9FDOM/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://s1.ax1x.com/2020/06/04/tw0mOe.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Vue学习笔记 ---- 虚拟DOM" alt="Vue学习笔记 ---- 虚拟DOM"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20----%20%E8%99%9A%E6%8B%9FDOM/" title="Vue学习笔记 ---- 虚拟DOM">Vue学习笔记 ---- 虚拟DOM</div><time class="aside-post_meta post-meta__date">2020-06-04</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://s1.ax1x.com/2020/06/03/tNxUIA.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="BFC小结" alt="BFC小结"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/03/BFC%E5%B0%8F%E7%BB%93/" title="BFC小结">BFC小结</div><time class="aside-post_meta post-meta__date">2020-06-03</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://s1.ax1x.com/2020/06/02/tYnhqI.th.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="javaScript的深浅拷贝" alt="javaScript的深浅拷贝"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/02/javaScript%E7%9A%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/" title="javaScript的深浅拷贝">javaScript的深浅拷贝</div><time class="aside-post_meta post-meta__date">2020-06-02</time></div></a></div><div class="aside-recent-post"><a href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://s1.ax1x.com/2020/06/01/t8iZon.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" title="防抖与节流" alt="防抖与节流"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/06/01/%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/" title="防抖与节流">防抖与节流</div><time class="aside-post_meta post-meta__date">2020-06-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/"><div class="aside-post-cover"><img class="aside-post-bg lazyload" data-src="https://s1.ax1x.com/2020/05/31/tlNg6e.th.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="我所理解的Event-loop" alt="我所理解的Event-loop"></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/05/31/%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84Event-loop/" title="我所理解的Event-loop">我所理解的Event-loop</div><time class="aside-post_meta post-meta__date">2020-05-31</time></div></a></div></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fa fa-archive" aria-hidden="true"></i><span>归档</span></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/"><span class="archive-list-date">2020年06月</span><span class="archive-list-count">4</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/"><span class="archive-list-date">2020年05月</span><span class="archive-list-count">5</span></a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><span class="archive-list-date">2020年03月</span><span class="archive-list-count">4</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fa fa-line-chart" aria-hidden="true"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">13</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" start_date="3/10/2020 19:00:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 幻尘</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="icp"><a href="http://beian.miit.gov.cn" target="_blank" rel="noopener"><img class="icp-icon" src="/img/icp.png"><span>蒙ICP备20000691号-1</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">简</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/canvas-nest.js"></script><script src="https://cdn.jsdelivr.net/npm/activate-power-mode/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true; 
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/ClickShowText.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script type="text/javascript" src="http://yijuzhan.com/api/word.php?m=js"></script><script>var con = str[0];
+var author = "出自 " + str[1];
+var sub = '今日事&#44;今日毕,Never put off till tomorrow what you can do today'.length == 0  ? new Array() : '今日事&#44;今日毕,Never put off till tomorrow what you can do today'.split(",");
+var both = sub.unshift(con,author)
+var typed = new Typed(".subtitle", {
+strings: sub,
+startDelay: 300,
+typeSpeed: 100,
+loop: true,
+backSpeed: 50
+});</script></body></html>
