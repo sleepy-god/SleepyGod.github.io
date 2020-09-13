@@ -162,9 +162,9 @@ function activateLightMode(){
 
 <p>nodeOps的封装是为了更好地进行跨平台渲染，这里的逻辑就是将当前的元素从它的父节点中删除，noideOps是对节点操作的封装</p>
 <h3 id="更新节点"><a href="#更新节点" class="headerlink" title="更新节点"></a>更新节点</h3><p>下图是一个替换文字的简单例子，视图中的文本节点包含的文字是“我是文字”，而当状态发生变化时，将文本改成了“我是文字2“，这时根据改变后的状态生成了新的vnode，然后将vnode与oldVnode进行对比，发现他们是同一个节点，深层次对比后，发现文字发生了变化，最后将真实DOM中的文本改成了vnode中的文字”我是文字2“</p>
-<p><a href="https://s1.ax1x.com/2020/06/02/ttsKiV.jpg" target="_blank" rel="noopener" data-fancybox="group" data-caption="ttsKiV.jpg" class="fancybox"><img alt="ttsKiV.jpg" data-src="https://s1.ax1x.com/2020/06/02/ttsKiV.jpg" class="lazyload" title="ttsKiV.jpg"></a></p>
+<p><a href="https://s1.ax1x.com/2020/06/02/ttsKiV.jpg" target="_blank" rel="noopener" data-fancybox="group" data-caption="ttsKiV.jpg" class="fancybox"><img alt="ttsKiV.jpg" title="ttsKiV.jpg" data-src="https://s1.ax1x.com/2020/06/02/ttsKiV.jpg" class="lazyload"></a></p>
 <p>patch的工作流程大致如下图所示：</p>
-<p><a href="https://s1.ax1x.com/2020/06/02/ttcbTA.jpg" target="_blank" rel="noopener" data-fancybox="group" data-caption="ttcbTA.jpg" class="fancybox"><img alt="ttcbTA.jpg" data-src="https://s1.ax1x.com/2020/06/02/ttcbTA.jpg" class="lazyload" title="ttcbTA.jpg"></a></p>
+<p><a href="https://s1.ax1x.com/2020/06/02/ttcbTA.jpg" target="_blank" rel="noopener" data-fancybox="group" data-caption="ttcbTA.jpg" class="fancybox"><img alt="ttcbTA.jpg" title="ttcbTA.jpg" data-src="https://s1.ax1x.com/2020/06/02/ttcbTA.jpg" class="lazyload"></a></p>
 <p>静态节点指的是那些一定那渲染到界面上，无论状态如何改变，都不会发生变化的节点</p>
 <div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">html</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">p</span>></span>静态节点<span class="tag"><!--<span class="name"-->p</span>></span><br></pre></td></tr></tbody></table></figure></div>
 
