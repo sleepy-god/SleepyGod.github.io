@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sleepygod.xyz/categories/index.html</loc>
+    
+    <lastmod>2020-10-10T07:37:21.954Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.sleepygod.xyz/link/index.html</loc>
+    
+    <lastmod>2020-10-10T07:36:41.023Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.sleepygod.xyz/link/index-1.html</loc>
+    
+    <lastmod>2020-10-10T07:35:31.596Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.sleepygod.xyz/2020/10/09/HTTPS/</loc>
     
     <lastmod>2020-10-09T04:32:47.131Z</lastmod>
@@ -128,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://www.sleepygod.xyz/link/index.html</loc>
-    
-    <lastmod>2020-09-28T09:13:41.144Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.sleepygod.xyz/tags/index.html</loc>
     
     <lastmod>2020-09-28T09:13:09.800Z</lastmod>
@@ -145,13 +159,6 @@
     <loc>http://www.sleepygod.xyz/2020/03/10/%E5%88%9D%E6%9D%A5%E4%B9%8D%E5%88%B0%EF%BC%8C%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99/</loc>
     
     <lastmod>2020-05-28T13:09:15.276Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.sleepygod.xyz/categories/index.html</loc>
-    
-    <lastmod>2020-03-10T09:43:04.132Z</lastmod>
     
   </url>
   
